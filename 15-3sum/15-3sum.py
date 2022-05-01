@@ -1,3 +1,6 @@
+class Solution:
+    # Time Complexity: O(n)
+    # Space Complexity: O(logN)/O(n) depending on the sorting algorithm
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         result = []
         nums.sort()
@@ -11,9 +14,9 @@
                 numSum = value + nums[l] + nums[r]  # compute the sum of current value and pointed numbers
 
                 if numSum == 0: # move the pointers until the end
-                    result.append([value + nums[l] + nums[r]])
+                    result.append([value, nums[l], nums[r]])
                     l += 1
-                    while nums[l] == nums[l - 1] and l < r:
+                    while l < r and nums[l] == nums[l - 1]:
                         l += 1
                 elif numSum < 0:
                     l += 1
