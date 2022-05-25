@@ -6,10 +6,10 @@ class TrieNode:
         
 class Trie:
 
-    def __init__(self):
+    def __init__(self): # initialize the data structure
         self.root = TrieNode()
 
-    def insert(self, word: str) -> None:
+    def insert(self, word: str) -> None: # inserts a word into the trie
         node = self.root
         for char in word:
             if char in node.children:
@@ -20,7 +20,7 @@ class Trie:
                 node = new_node
         node.is_end = True
 
-    def search(self, word: str) -> bool:
+    def search(self, word: str) -> bool: # inserts a word into the trie
         node = self.root
         for char in word:
             if char not in node.children:
@@ -29,7 +29,7 @@ class Trie:
 
         return node.is_end
 
-    def startsWith(self, prefix: str) -> bool:
+    def startsWith(self, prefix: str) -> bool: # returns if the word is in the trie
         node = self.root
         for char in prefix:
             if char not in node.children:
