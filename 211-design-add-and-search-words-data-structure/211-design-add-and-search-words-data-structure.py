@@ -1,36 +1,35 @@
-
-class TrieNode:
-    def __init__(self):
-        self.children = {} # a : TrieNode
-        self.word = False
-
 class WordDictionary:
-    def __init__(self):
-        self.root = TrieNode()
-        
-    def addWord(self, word: str) -> None:
-        cur = self.root
-        for c in word:
-            if c not in cur.children:
-                cur.children[c] = TrieNode()
-            cur = cur.children[c]
-        cur.word = True
-        
-    def search(self, word: str) -> bool:
-        def dfs(j, root):
-            cur = root
 
-            for i in range(j, len(word)):
-                c = word[i]
-                if c == ".":
-                    for child in cur.children.values():
-                        if dfs(i + 1, child):
-                            return True
+    def __init__(self):
+        self.trie = {}
+
+
+    def addWord(self, word: str) -> None:
+        node = self.trie
+
+        for ch in word:
+            if not ch in node:
+                node[ch] = {}
+            node = node[ch]
+        node['$'] = True
+
+    def search(self, word: str) -> bool:
+        def search_in_node(word, node) -> bool:
+            for i, ch in enumerate(word):
+                if not ch in node:
+                    # if the current character is '.'
+                    # check all possible nodes at this level
+                    if ch == '.':
+                        for x in node:
+                            if x != '$' and search_in_node(word[i + 1:], node[x]):
+                                return True
+                    # if no nodes lead to answer
+                    # or the current character != '.'
                     return False
+                # if the character is found
+                # go down to the next level in trie
                 else:
-                    if c not in cur.children:
-                        return False
-                    cur = cur.children[c]
-            return cur.word
-        
-        return dfs(0, self.root)
+                    node = node[ch]
+            return '$' in node
+
+        return search_in_node(word, self.trie)
