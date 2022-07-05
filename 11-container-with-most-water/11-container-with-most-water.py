@@ -1,4 +1,6 @@
 class Solution:
+    # Time Complexity: O(n)
+    # Space Complexity: O(1)
     def maxArea(self, height: List[int]) -> int:
         maxArea = 0
         left = 0
