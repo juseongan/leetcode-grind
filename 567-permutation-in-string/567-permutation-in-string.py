@@ -1,4 +1,6 @@
 class Solution:
+    # Time Complexity: O(n)
+    # Space Complexity: O(1)
     def checkInclusion(self, s1: str, s2: str) -> bool:
         if len(s1) > len(s2): return False
         
