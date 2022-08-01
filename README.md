@@ -5,17 +5,27 @@
 <br>
 
 ## Time Table
+<!-- DataStructures과 Algorithms이 작성되면 작성할 예정 --->
 
 
 <br><br>
 <hr>
-<br><br><br>
+<br><br>
 
 
 ## Data Structures
 
+<!--
+마크다운 하이퍼링크 형식
+
+[하이퍼링크이름](#하이퍼링크할-파일-이름): 동일한 파일 내의 헤더부분으로 이동
+[하이퍼링크이름](./파일이름): 외부 폴더로 접근 가능
+[구글](https://google.com): '구글'을 클릭하여 URL로 접속
+<https://google.com>: 'https://~'을 클릭하여 URL 접속
+
+-->
 ### [1. Arrays & Hashing](./DataStructures/1_Arrays_&_Hashing.html)
-### [2. Sequential Structures](./DataStructures/2_Stack.md)
+### [2. Sequential Structures](./DataStructures/2_Stack.md) <!-- DataStructures/2_Stack.md 파일로 이동 -->
 * Array(List)
 * Stack
 * Queue
@@ -35,9 +45,7 @@
 
 <br><br>
 <hr>
-<br><br><br>
-
-
+<br><br>
 
 ## Algorithms
 ### 1. Sort
