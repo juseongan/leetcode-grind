@@ -1,15 +1,15 @@
 class Solution:
     def findItinerary(self, tickets: List[List[str]]) -> List[str]:
         graph = collections.defaultdict(list)
-        for a, b in sorted(tickets):
-            graph[a].append(b)
+        for departure, arrival in sorted(tickets):
+            graph[departure ].append(arrival)
         
-        route = []
-        def dfs(a):
-            while graph[a]:
-                dfs(graph[a].pop(0))
-            route.append(a)
+        route = [] # storing the order
+        def dfs(departure):
+            while graph[departure]:
+                dfs(graph[departure].pop(0))
+            route.append(departure)
             
-        dfs("JFK")
+        dfs("JFK") # calling dfs 
         
         return route[::-1]
