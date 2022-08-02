@@ -12,8 +12,7 @@
 <!-- 
 문제(필수), 해결(필수), 추가 설명(선택)으로 기입
 링크를 걸어 빠르게 파일 혹은 페이지에 접근할 수 있음 -->
-* 1-two-sum [(click)](https://leetcode.com/problems/reconstruct-itinerary/) (Solution [click](../내부.py)) (Extra Explanation [click])
-* 36-valid-sudoku [()]() (Solution [[click]](../내부.py)) 
+* 200 Number of Islands (Problem [(click)](https://leetcode.com/problems/reconstruct-itinerary/)) (Solution [(click)](./Graphs/200-Number-of-Islands/200-Number-of-Islands.py)) (Extra Explanation [(click)]())
 
 <br> 
 
@@ -37,7 +36,6 @@
 
 * **Time Complexity**
     * Big-O O(|V|)+|E|)
-    * 
 
     <br>
 
