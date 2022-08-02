@@ -2,34 +2,37 @@
 
 # Graphs
 
-## Index
-1. Problems
-2. [Solution Type](./) <!-- 하위 폴더(외부 파일)로 이동-->
-3. [Summarize](#summarize) <!-- 파일 내의 header로 이동-->
+## Time table 
+* [Problems](#problems)
+* [Solution Type](#solution-type) 
 
 <br>
 
-## Problems <!-- 문제(필수), 해결(필수), 추가 설명(선택)으로 기입-->
-<!-- 각각의 객체는 하이퍼링크를 통해 빠르게 파일 혹은 페이지에 접근할 수 있다. -->
+## Problems 
+<!-- 
+문제(필수), 해결(필수), 추가 설명(선택)으로 기입
+링크를 걸어 빠르게 파일 혹은 페이지에 접근할 수 있음 -->
 * 1-two-sum [(click)](https://leetcode.com/problems/reconstruct-itinerary/) (Solution [click](../내부.py)) (Extra Explanation [click])
 * 36-valid-sudoku [()]() (Solution [[click]](../내부.py)) 
 
 <br> 
 
-## Solution Type <!-- 알고리즘 유형 종류 -->
+<!-- 알고리즘 유형 종류 -->
+## Solution Type 
 ### DFS 
 <!-- 
-필수 요소
+아래래 두 문장을 복사붙여넣기 하여 사용할 것을 추천
+
 * **Pseudocode** 
-* **Time Complexity** 
-위의 두 가지 복사붙여넣기 하여 사용할 것을 추천
+* **Time Complexity**  
 -->
 
 * **Pseudocode** <br>
     ![Pseudocode]()<Br>
-    
-        dadfa;lkj;ladfla;sldfj;alk
-        as;dlfkjas;ldkfj
+    <!-- 두 칸 탭을 해줍니다.-->
+        DEF():
+
+
     <br>
 
 * **Time Complexity**

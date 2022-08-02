@@ -5,12 +5,13 @@
 ## Problem <!-- 문제는 리트코드에서 캡쳐하거나, 복사붙여넣기 -->
 
 <!-- 
-이미지 넣는 방법
+이미지 넣는 방법 (GitHub issues를 이미지 서버로 이용)
 1. 사용할 이미지를 '복사'한다.
-1. https://github.com/juseongan/leetcode-grinding/issues/new 에 접속한다.
-2. 이미지를 'Leave a comment'에 '붙여넣기'한다.
-3. 조금만 기다리면! 이미지 URL이 나온다. 
-4. '![이미지이름](URL)' 형식으로 .md 파일 안에 기입한다.
+2. https://github.com/juseongan/leetcode-grinding/issues/new 에 접속한다.
+3. 이미지를 'Leave a comment'에 '붙여넣기'한다.
+4. 조금만 기다리면! 이미지 URL이 나온다. 
+5. '![이미지이름](URL)' 형식으로 .md 파일 안에 기입한다.
+    [이미지이름]에는 아무거나 작성 가능
 -->
 
 ![1](https://user-images.githubusercontent.com/105165938/182026766-b28f8040-9c19-47f7-9de5-26600ff40f1b.png)
@@ -18,17 +19,15 @@
 <br>
 
 ## Condition <!-- 문제에 나와있는 조건 정리 -->
-
 <!-- 
-비슷한 유형의 문제가 나왔을 때 빠르게 인지하는데 도움이 되고자 만들었다.
-내가 생각했을 때, 문제에 나와있는 '조건'들을 작성하면 된다.
+비슷한 유형의 문제가 나왔을 때 빠르게 인지하는데 도움이 되고자 만들었습니다.
+내가 생각했을 때, 문제에 나와있는 '조건'들을 작성하면 됩니다.
 -->
 1. Reconstruct the itinerary in order
 2. The itinerary must return the smalllest lexical order when read as a single string
 3. The itinerary must begin with **"JEK"**<br>
 
-<!-- 문제 이해를 위해 추가 설명이 필요하다면 작성한다. (그림 첨부 추천)-->
-
+<!-- 문제 이해를 위해 추가 설명이 필요하다면 작성 (그림 첨부 추천)-->
 ![2](https://user-images.githubusercontent.com/105165938/182027258-ad917159-44d5-4839-8c09-6ced0c60d172.jpeg)<br>
 
 <br>
