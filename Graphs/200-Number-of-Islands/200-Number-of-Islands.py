@@ -1,6 +1,19 @@
+# Graph represent
+grid = [
+    [1,1,1,1,0],
+    [1,1,0,1,0],
+    [1,1,0,0,0],
+    [0,0,0,0,0],
+]
+
+# Graph traversal
 class Solution:
-    def numIslands(self, grid: List[List[str]]) -> int:
+    def numIslands(self, grid): # grid: list -> int:
+
+        # Traversal method is DFS
         def dfs(i,j):
+
+            # base case: 0 < i < len(grid), 0 < j < len(grid)
             if i < 0 or i >= len(grid) or j < 0 or j >= len(grid[0]) or grid [i][j] != '1':
                 return
             
@@ -19,3 +32,5 @@ class Solution:
                     count += 1
         return count
         
+# Recall Graph
+solution = Solution
