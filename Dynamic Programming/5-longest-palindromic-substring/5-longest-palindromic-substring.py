@@ -14,3 +14,11 @@ class Solution:
         for i in range(len(s)-1):
             result = max(result, expand(i, i+1),expand(i, i+2), key=len)
         return result
+
+
+# Dynamic Programming
+'''
+Time complexity O(n^3)
+                O(n^2): Brute Force
+                O(n): Check if a string is a palindromic or not.
+'''
