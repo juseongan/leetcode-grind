@@ -4,8 +4,11 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
+# LCA approach
 class Solution:
-    # LCA approach
+    # Time Complexity: O(n)
+    # Space Complexity: O(n)
     def getDirections(self, root: Optional[TreeNode], startValue: int, destValue: int) -> str:
         
         def getLCA(node: Optional[TreeNode]):
