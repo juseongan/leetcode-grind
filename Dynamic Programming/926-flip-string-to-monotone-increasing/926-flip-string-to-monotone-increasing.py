@@ -32,3 +32,18 @@ class Solution:
         for j in range(N):
             flips = min(flips, dp[1][N-1] - dp[1][j] + dp[0][j])
         return flips
+
+# Prefix Sum Approach
+class Solution:
+    def minFlipsMonoIncr(self, s: str) -> int:
+        numFlips = 0                            # intially both are 0
+        numOnes = 0
+        
+        for c in range(len(s)):                 # if not 1 then it's a zero
+            if (s[c] == "1"):
+                numOnes += 1
+            elif (numOnes > 0):
+                numFlips += 1                   # in case we have already seen a zero, we will increase the numFlips
+            numFlips = min(numFlips, numOnes)   # we will do a fip if its count is less then # of 1's seen so far
+            
+        return numFlips
