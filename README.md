@@ -5,7 +5,7 @@
 
 <br>
 
-## Time Table
+## Table of content
 <!-- DataStructures과 Algorithms이 작성되면 작성할 예정 --->
 
 
