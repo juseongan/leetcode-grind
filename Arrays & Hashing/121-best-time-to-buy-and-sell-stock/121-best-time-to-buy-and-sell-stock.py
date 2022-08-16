@@ -3,6 +3,27 @@
 2. find the maximum price of prices after minimum price
 3. return the profit by caculating maximum - mimimum
 '''
+# Brute Force
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+
+        '''
+        모든 가능성을 하나하나 비교
+        '''
+        max_profit = 0
+        for buy in range(0, len(prices)):
+            for sell in range(buy+1, len(prices)):
+                current_profit = prices[sell] - prices[buy]
+
+                if current_profit > max_profit:
+                    max_profit = current_profit
+        return max_profit
+'''
+Time Complexity: O(n^2)
+Space Complexity: O(1) two variables
+'''
+
+
 
 # Dynamic Programming 
 class Solution:
