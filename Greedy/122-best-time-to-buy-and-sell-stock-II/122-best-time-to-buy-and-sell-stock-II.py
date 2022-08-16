@@ -1,7 +1,6 @@
 '''
 Sell before the stock price falls and buy before it rises.
 '''
-
 # Greedy
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
@@ -9,10 +8,10 @@ class Solution:
         gain = 0
         
         # Accumulate profit
-        for i in range(len(prices)-1):
+        for price in range(0, len(prices)):
             
-            if prices[i+1] > prices[i]:
-                gain += prices[i+1] - prices[i]
+            if prices[price+1] > prices[price]:
+                gain += prices[price+1] - prices[price]
                 
         return gain
             
