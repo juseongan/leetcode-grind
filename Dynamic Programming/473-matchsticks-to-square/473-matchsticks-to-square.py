@@ -67,8 +67,8 @@ class Solution:
         
         return dfs(0,0,0,0,0)
 '''
-Time Complexity: 
-Space Complexity: 
+Time Complexity: O(4^n)
+Space Complexity: O(n): all the recursive calls.
 
 refer to: https://www.youtube.com/watch?v=Amfd1bqZmVg&t=90s
 '''
