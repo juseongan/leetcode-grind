@@ -30,5 +30,7 @@ class Solution:
             
         dfs(root)
         return self.move
-
-            
+'''
+Time complexity: O(N) where N is the number of nodes in the tree.
+Space complexity: O(H) where H is the height of the tree.
+'''
