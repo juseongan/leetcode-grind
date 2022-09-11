@@ -64,3 +64,44 @@ class Codec:
 # ser = Codec()
 # deser = Codec()
 # ans = deser.deserialize(ser.serialize(root))
+
+
+# preorder traversal approach
+class Codec:
+    # Time Complexity: O(n)
+    # Space Complexity: O(n)
+    def serialize(self, root):
+        sequence = ""
+        def traversal(node):    # pre-order traversal
+            nonlocal sequence   # ~global, can modify surrounding function's scope.
+
+            if node is None:
+                sequence += "null,"
+            else:
+                sequence += str(node.val) + ","
+                traversal(node.left)
+                traversal(node.right)
+
+        traversal(root)
+        
+        return sequence
+                
+
+    def deserialize(self, data):
+        dataList = data.split(",")
+        
+        def traversal(dataList):    # pre-order traversal
+            if dataList[0] == "null":
+                dataList.pop(0)
+                return None
+            
+            node = TreeNode(dataList[0])
+            dataList.pop(0)
+            
+            node.left = traversal(dataList)
+            node.right = traversal(dataList)
+            
+            return node
+        
+        root = traversal(dataList)
+        return root
