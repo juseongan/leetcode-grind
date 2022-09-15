@@ -46,3 +46,36 @@ class Solution:
         print(indegree)
         
         return [recipe for recipe in recipes if recipe in visited]
+
+
+
+class Solution:
+    # implementation source 
+    # https://leetcode.com/problems/find-all-possible-recipes-from-given-supplies/discuss/1756825/Python-3-DFS-(Easiest-to-Understand-Solution)
+    def findAllRecipes(self, recipes: List[str], ingredients: List[List[str]], supplies: List[str]) -> List[str]:
+        suppliesSet = set(supplies)
+        recipesMap = {recipes[i]: ingredients[i] for i in range(len(recipes))}
+        possibleRecipes = []
+        
+        for recipe in recipesMap:
+            if self.canMake(recipe, suppliesSet, recipesMap, set()):
+                possibleRecipes.append(recipe)
+                
+        return possibleRecipes
+    
+    def canMake(self, target, suppliesSet, recipesMap, seen):
+        if target in suppliesSet:
+            return True
+        if target in seen:
+            return False
+        if target not in recipesMap:
+            return False
+        
+        seen.add(target)
+        
+        for ingredient in recipesMap[target]:
+            if not self.canMake(ingredient, suppliesSet, recipesMap, seen):
+                return False
+        
+        suppliesSet.add(target)
+        return True
