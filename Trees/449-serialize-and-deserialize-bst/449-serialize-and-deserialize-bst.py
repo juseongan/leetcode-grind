@@ -5,8 +5,8 @@
 #         self.left = None
 #         self.right = None
 
+# Preorder Approach
 class Codec:
-
     def serialize(self, root: Optional[TreeNode]) -> str:
         sequence = ""
         def traversal(node):    # pre-order traversal
@@ -42,11 +42,27 @@ class Codec:
         root = traversal(dataList)
         return root
         
+# Postorder Approach
+class Codec:
+    def serialize(self, root: Optional[TreeNode]) -> str:
+        def postorder(node):
+            if node:
+                return postorder(node.left) + postorder(node.right) + [node.val]
+            else:
+                return []
+        
+        return " ".join(map(str, postorder(root)))
 
-# Your Codec object will be instantiated and called as such:
-# Your Codec object will be instantiated and called as such:
-# ser = Codec()
-# deser = Codec()
-# tree = ser.serialize(root)
-# ans = deser.deserialize(tree)
-# return ans
+    def deserialize(self, data: str) -> Optional[TreeNode]:
+        def postorder(lower = float('-inf'), upper = float('inf')):
+            if not data or data[-1] < lower or data[-1] > upper:
+                return None
+            
+            val = data.pop()
+            node = TreeNode(val)
+            node.right = postorder(val, upper)
+            node.left = postorder(lower, val)
+            return node
+        
+        data = [int(x) for x in data.split(' ') if x]
+        return postorder()
