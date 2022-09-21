@@ -45,3 +45,24 @@ class Solution:
                 curClone.neighbors.append(clones[neighbor.val])       
         
         return clones[node.val]
+
+# Recursive DFS Approach
+class Solution:
+    # Time Complexity: O(V + E)
+    # Space Complexity: O(V)
+    def cloneGraph(self, node: 'Node') -> 'Node':
+        if not node:
+            return node
+        
+        clones = {}
+        def dfs(curNode):
+            if curNode in clones:
+                return clones[curNode]
+
+            curClone = Node(curNode.val)
+            clones[curNode] = curClone
+            for nei in curNode.neighbors:
+                curClone.neighbors.append(dfs(nei))
+            return curClone
+
+        return dfs(node)
