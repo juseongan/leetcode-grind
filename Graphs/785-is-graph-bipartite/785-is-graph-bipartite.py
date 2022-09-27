@@ -30,3 +30,24 @@ class Solution:
             if not bfs(start):
                 return False
         return True
+
+# hyebin's solution
+class Solution:
+    def isBipartite(self, graph: List[List[int]]) -> bool:
+        V = len(graph)
+        colored = {}
+        
+        for v in range(V):
+            if v not in colored and graph[v]:
+                colored[v] = 1
+                
+                queue = collections.deque([v])
+                while queue:
+                    here = queue.popleft()
+                    for there in graph[here]:
+                        if there not in colored:
+                            colored[there] = -colored[here]
+                            queue.append(there)
+                        elif colored[there] == colored[here]:
+                            return False
+        return True
