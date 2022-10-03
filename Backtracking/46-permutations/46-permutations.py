@@ -19,3 +19,36 @@ class Solution:
                 
         dfs(nums)
         return permutations
+
+# hyebin's solution
+class Solution:
+    '''
+    if nums = [1,2,3]    -> len(nums) == n
+                []        -> permutation 
+               / | \ 
+            [1] [2] [3]   -> choose one in nums: n cases
+            /\   /\  /\       
+        [2,3]             -> choose one in nums (except num choosen): (n-1) cases
+        /   
+    [1,2,3]               -> choose one in nums (except num choosen): 1 case
+
+    Finally, we must have to merge each permutation
+    '''
+    def permute(self, nums: List[int]) -> List[List[int]]:
+        permutations = []
+        permutation = []
+        
+        def dfs(nums):
+            if len(nums) == 0: 
+                permutations.append(permutation[:])
+                
+            for num in nums:
+                new_nums = nums[:]
+                new_nums.remove(num)
+                
+                permutation.append(num)
+                dfs(new_nums)
+                permutation.pop()
+                
+        dfs(nums)
+        return permutations
