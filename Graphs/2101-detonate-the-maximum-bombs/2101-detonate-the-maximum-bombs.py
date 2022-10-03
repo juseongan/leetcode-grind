@@ -1,3 +1,4 @@
+# to make this solution BFS, modify dq.pop() to dq.pop(0)
 class Solution:
     # DFS Approach
     def maximumDetonation(self, bombs: List[List[int]]) -> int:
