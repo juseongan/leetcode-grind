@@ -23,15 +23,14 @@ class Solution:
         
         return self.output
 
-
-
-
 # Hyebin's solution
+# dfs -> backtracking
 class Solution:
     def letterCombinations(self, digits: str) -> List[str]:
-         
-        letter = {
-            "2": "abc",
+        
+        # represent telephone buttons to graph
+        buttons = {
+            "2":"abc",
             "3":"def",
             "4":"ghi",
             "5":"jkl",
@@ -41,20 +40,21 @@ class Solution:
             "9":"wxyz"
         }
         
-        def dfs(index, path):
-            if len(path) == len(digits):
-                result.append(path)
+        if not digits: 
+            return [] # if digits is "", return []
+        
+        combinations = []
+        def dfs(combination, i):
+            # 종료 조건
+            if len(combination) == len(digits):
+                combinations.append(combination)
                 return
             
-            for i in range(index, len(digits)):
-                for j in letter[digits[i]]:
-                    dfs(i+1, path+j)
-                    
-        if not digits:
-            return []
-        
-        
-        result = []
-        dfs(0, "")
-        
-        return result
+            for i in range(i, len(digits)): # i is index of digits
+                number = digits[i]
+                strings = buttons[number]
+                for string in strings:
+                    dfs(combination+string, i+1)    
+                
+        dfs("", 0)
+        return combinations
