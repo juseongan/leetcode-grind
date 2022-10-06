@@ -28,3 +28,7 @@ class Solution:
                     dfs(row,col)
                     island+=1
         return island
+'''
+time complexity: O(n*m)
+space complexity: O(n*m)
+'''
